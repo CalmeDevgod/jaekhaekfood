@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             name: 'ข้าวกะเพราหมูกรอบไข่ดาว',
             price: '60.-',
-            image: 'item3.jpg',
+            image: '/pic/moo1.jpg',
             description: 'Grilled pork basil with fried egg.'
         },
         {
