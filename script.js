@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'Crispy pork fried with fish sauce.'
         },
         {
-            name: 'ข้าวกะเพราอกหมูย่างไข่ดาว',
+            name: 'ข้าวกะเพราหมูกรอบไข่ดาว',
             price: '60.-',
             image: 'item3.jpg',
             description: 'Grilled pork basil with fried egg.'
