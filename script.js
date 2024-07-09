@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'ข้าวหมูกรอบคั่วพริกเกลือ',
-            price: '100.-',
-            image: 'pic/moo1.jpg',
-            description: 'Crispy pork fried with fish sauce.'
+            price: '60.-',
+            image: 'pic/moo2.jpg',
+            description: 'Crispy pork fried with salt.'
         },
         {
             name: 'ข้าวกะเพราหมูกรอบไข่ดาว',
