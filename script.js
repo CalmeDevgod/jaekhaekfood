@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'Delicious stir-fried seafood basil with egg.'
         },
         {
-            name: 'หมูกรอบทอดน้ำปลา',
+            name: 'ข้าวหมูกรอบคั่วพริกเกลือ',
             price: '100.-',
-            image: 'item2.jpg',
+            image: 'pic/moo1.jpg',
             description: 'Crispy pork fried with fish sauce.'
         },
         {
