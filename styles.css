@@ -217,3 +217,56 @@ header {
 .hidden {
     display: none;
 }
+body1 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.receipt {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+}
+.receipt h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.receipt table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.receipt th,
+.receipt td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.receipt th {
+    background-color: #3dc8ff;
+    color: white;
+}
+.total-price {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+#backToIndex {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+#backToIndex:hover {
+    background-color: #4CAF50;
+}
