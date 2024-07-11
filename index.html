@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="pic/LOGO.png" alt="Restaurant Logo" class="logo">
+            <div class="title-section">
+                <h1>เมนูแนะนำ</h1>
+                <h2>Recommend Menu</h2>
+            </div>
+        </div>
+    </header>
+    <div id="menu" class="menu"></div>
+    <div class="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>รายการอาหาร</th>
+                    <th>ราคา</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cartItems"></tbody>
+        </table>
+    </div>
+    <div class="price-and-bill-container">
+        <div id="totalPrice">Total Price: 0.00 .-</div>
+        <button id="billButton">ใบเสร็จ</button>
+    </div>
+
+    <div id="popup-container" class="popup-container hidden">
+        <div class="popup">
+            <button id="close-popup">X</button>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
