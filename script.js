@@ -98,3 +98,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     billButton.addEventListener('click', createReceipt);
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const receiptContent = JSON.parse(localStorage.getItem('receiptData'));
+    const totalPrice = localStorage.getItem('totalPrice');
+    const receiptContentDiv = document.getElementById('receiptContent');
+    const receiptTotalPriceDiv = document.getElementById('receiptTotalPrice');
+    const backToIndexButton = document.getElementById('backToIndex');
+
+    if (receiptContent && receiptContent.length > 0) {
+        const table = document.createElement('table');
+        const tableHeader = `
+            <thead>
+                <tr>
+                    <th>รายการอาหาร</th>
+                    <th>ราคา</th>
+                </tr>
+            </thead>
+        `;
+        table.innerHTML = tableHeader;
+        const tbody = document.createElement('tbody');
+        receiptContent.forEach(item => {
+            const row = document.createElement('tr');
+            const nameCell = document.createElement('td');
+            nameCell.textContent = item.name;
+            const priceCell = document.createElement('td');
+            priceCell.textContent = item.price;
+            row.appendChild(nameCell);
+            row.appendChild(priceCell);
+            tbody.appendChild(row);
+        });
+        table.appendChild(tbody);
+        receiptContentDiv.appendChild(table);
+        receiptTotalPriceDiv.textContent = totalPrice;
+    } else {
+        receiptContentDiv.textContent = 'ยังไม่ได้เลือกรายการ';
+    }
+
+    backToIndexButton.addEventListener('click', function () {
+        window.location.href = 'index.html';
+    });
+});
