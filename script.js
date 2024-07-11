@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showPopup(item) {
         popupContent.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="menu-item img"/>
+            <img src="${item.image}" alt="${item.name}" class="popup-img"/>
             <h3>${item.name}</h3>
             <p>${item.price} .-</p>
             <button id="confirm-add-to-cart" class="billButton">เพิ่ม</button>
