@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Order</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    .menu-item {
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .menu-item h5 {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-4">Order Food</h1>
+    <form id="orderForm">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="menu-item">
+            <img src="https://via.placeholder.com/150" alt="Pizza 100.-">
+            <h5>Pizza 100.-</h5>
+            <input type="checkbox" name="menu" value="Pizza 100.-">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="menu-item">
+            <img src="https://via.placeholder.com/150" alt="Burger">
+            <h5>Burger</h5>
+            <input type="checkbox" name="menu" value="Burger">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="menu-item">
+            <img src="https://via.placeholder.com/150" alt="Sushi">
+            <h5>Sushi</h5>
+            <input type="checkbox" name="menu" value="Sushi">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="menu-item">
+            <img src="https://via.placeholder.com/150" alt="Salad">
+            <h5>Salad</h5>
+            <input type="checkbox" name="menu" value="Salad">
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-success mt-3" onclick="sendOrder()">Send Order</button>
+    </form>
+  </div>
+
+  <script>
+    function sendOrder() {
+      const checkboxes = document.querySelectorAll('input[name="menu"]:checked');
+      const selectedMenus = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+      fetch('/sendOrderToLine', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ menu: selectedMenus }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Order sent to Line: ' + data.message);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+  
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
